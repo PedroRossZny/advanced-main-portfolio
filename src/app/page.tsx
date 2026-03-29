@@ -1,23 +1,41 @@
+import ProfileCard from "@/components/ProfileCard";
+
 export default function Home() {
   return (
-    <div className="container mx-auto px-6 py-20">
-      <section className="flex flex-col items-center justify-center min-h-[60vh] text-center">
-        <h1 className="text-5xl md:text-7xl font-bold font-poppins mb-6">
-          Pedro Henrique
-        </h1>
-        <p className="text-xl text-[var(--texto-mutado)] max-w-2xl">
-          Desenvolvedor Full-Stack focado em arquitetura, escalabilidade e soluções reais.
-        </p>
-      </section>
-
-      {/* Espaçadores apenas para testar o scroll e o menu fixo */}
-      <div id="tecnologias" className="h-screen flex items-center justify-center border-t border-[var(--borda)] mt-20">
-        <h2 className="text-3xl font-poppins">Seção de Tecnologias</h2>
-      </div>
+    /* O 'main' agora assume o papel do seu CSS original:
+       - grid-cols-1 para celular (empilhado)
+       - grid-cols-[320px_1fr] para desktop (sidebar fixa)
+    */
+    <main className="grid grid-cols-1 md:grid-cols-[320px_1fr] gap-8 w-[98%] max-w-[1500px] mx-auto mt-2.5 md:h-[calc(100vh-90px)] p-4 md:p-0">
       
-      <div id="projetos" className="h-screen flex items-center justify-center border-t border-[var(--borda)]">
-        <h2 className="text-3xl font-poppins">Seção de Projetos</h2>
-      </div>
-    </div>
+      {/* Coluna da Esquerda: Sua Ficha de Perfil */}
+      <ProfileCard />
+
+      {/* Coluna da Direita: Onde o conteúdo (Tecnologias, Projetos, etc) vai rolar */}
+      <section id="detalhes" className="md:overflow-y-auto pr-0 md:pr-4 pb-10 scroll-smooth">
+        
+        {/* Seção Sobre / Introdução (Opcional, baseada no que tínhamos no teste) */}
+        <article className="bg-[var(--fundo-card)] border border-[var(--borda)] p-6 mb-6 rounded-xl transition-colors duration-400">
+          <h2 className="text-[var(--destaque)] text-xl font-poppins font-semibold mb-6 border-b-2 border-[var(--borda)] pb-2.5">
+            Sobre o Projeto
+          </h2>
+          <p className="text-[var(--texto)] leading-relaxed">
+            Bem-vindo à nova versão do meu portfólio. Esta aplicação foi migrada para 
+            <strong> Next.js 15</strong> para garantir a melhor performance e SEO, 
+            mantendo toda a interatividade da versão original.
+          </p>
+        </article>
+
+        {/* Espaços reservados para as seções que vamos migrar a seguir */}
+        <div id="tecnologias" className="min-h-[400px]">
+           {/* Próximo passo: Componente de Tecnologias aqui */}
+        </div>
+
+        <div id="projetos" className="min-h-[400px]">
+           {/* Depois: Componente de Projetos aqui */}
+        </div>
+        
+      </section>
+    </main>
   );
 }
