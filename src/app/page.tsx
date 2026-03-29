@@ -1,4 +1,5 @@
 import ProfileCard from "@/components/ProfileCard";
+import TechSection from "@/components/TechSection";
 
 export default function Home() {
   return (
@@ -14,25 +15,12 @@ export default function Home() {
       {/* Coluna da Direita: Onde o conteúdo (Tecnologias, Projetos, etc) vai rolar */}
       <section id="detalhes" className="md:overflow-y-auto pr-0 md:pr-4 pb-10 scroll-smooth">
         
-        {/* Seção Sobre / Introdução (Opcional, baseada no que tínhamos no teste) */}
-        <article className="bg-[var(--fundo-card)] border border-[var(--borda)] p-6 mb-6 rounded-xl transition-colors duration-400">
-          <h2 className="text-[var(--destaque)] text-xl font-poppins font-semibold mb-6 border-b-2 border-[var(--borda)] pb-2.5">
-            Sobre o Projeto
-          </h2>
-          <p className="text-[var(--texto)] leading-relaxed">
-            Bem-vindo à nova versão do meu portfólio. Esta aplicação foi migrada para 
-            <strong> Next.js 15</strong> para garantir a melhor performance e SEO, 
-            mantendo toda a interatividade da versão original.
-          </p>
-        </article>
+        {/* Renderiza a seção de tecnologias aqui */}
+        <TechSection />
 
-        {/* Espaços reservados para as seções que vamos migrar a seguir */}
-        <div id="tecnologias" className="min-h-[400px]">
-           {/* Próximo passo: Componente de Tecnologias aqui */}
-        </div>
-
+        {/* Espaço para os Projetos que virão a seguir */}
         <div id="projetos" className="min-h-[400px]">
-           {/* Depois: Componente de Projetos aqui */}
+           {/* Próximo passo: Componente de Projetos aqui */}
         </div>
         
       </section>
