@@ -1,5 +1,6 @@
 import ProfileCard from "@/components/ProfileCard";
 import TechSection from "@/components/TechSection";
+import ProjectsSection from "@/components/ProjectsSection";
 
 export default function Home() {
   return (
@@ -18,10 +19,8 @@ export default function Home() {
         {/* Renderiza a seção de tecnologias aqui */}
         <TechSection />
 
-        {/* Espaço para os Projetos que virão a seguir */}
-        <div id="projetos" className="min-h-[400px]">
-           {/* Próximo passo: Componente de Projetos aqui */}
-        </div>
+        {/* Renderiza todos os seus projetos aqui! */}
+        <ProjectsSection />
         
       </section>
     </main>
