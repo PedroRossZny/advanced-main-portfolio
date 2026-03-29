@@ -1,1 +1,45 @@
 @import "tailwindcss";
+
+@layer base {
+  :root {
+    --fundo-principal: #ced1d8;
+    --fundo-card: #ebebf0;
+    --texto: #1f2937;
+    --texto-inverso: #ffffff;
+    --texto-mutado: #6b7280;
+    --destaque: #2563eb; 
+    --borda: #a8acb4;
+  }
+
+  /* A classe .dark será injetada automaticamente pelo next-themes depois */
+  .dark {
+    --fundo-principal: #0c111b;
+    --fundo-card: #171e29;
+    --texto: #f9fafb;
+    --texto-inverso: #0b101a;
+    --texto-mutado: #9ca3af;
+    --destaque: #3b82f6;
+    --borda: #374151;
+  }
+}
+
+@layer utilities {
+  @keyframes pulsarGlow {
+    0% { transform: scale(0.8); opacity: 0.1; }
+    100% { transform: scale(1.2); opacity: 0.25; }
+  }
+  @keyframes girarLoader {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  @keyframes girarLoaderInverso {
+    0% { transform: rotate(360deg); }
+    100% { transform: rotate(0deg); }
+  }
+}
+
+body {
+  background-color: var(--fundo-principal);
+  color: var(--texto);
+  transition: background-color 0.4s, color 0.4s;
+}
