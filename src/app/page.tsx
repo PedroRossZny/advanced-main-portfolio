@@ -1,6 +1,7 @@
 import ProfileCard from "@/components/ProfileCard";
 import TechSection from "@/components/TechSection";
 import ProjectsSection from "@/components/ProjectsSection";
+import EducationSection from "@/components/EducationSection";
 
 export default function Home() {
   return (
@@ -21,6 +22,9 @@ export default function Home() {
 
         {/* Renderiza todos os seus projetos aqui! */}
         <ProjectsSection />
+
+        {/* Renderiza a seção de formação logo abaixo dos projetos */}
+        <EducationSection />
 
       </section>
     </main>

@@ -6,6 +6,7 @@ import "./globals.css";
 import Loader from "@/components/Loader";
 import InteractiveBackground from "@/components/InteractiveBackground";
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 import { ThemeProvider } from "@/components/ThemeProvider";
 
 // Configuração das fontes (substituindo o @font-face manual por Google Fonts otimizadas)
@@ -34,7 +35,7 @@ export default function RootLayout({
       <body className={`${inter.variable} ${poppins.variable} font-sans antialiased`}>
         {/* Envolvendo a aplicação no ThemeProvider */}
         <ThemeProvider>
-          
+                    
           {/* O Loader aparece primeiro e se auto-remove */}
           <Loader />
           
@@ -48,6 +49,10 @@ export default function RootLayout({
             <main className="flex-grow">
               {children}
             </main>
+
+            {/* Rodapé sempre no final da tela */}
+            <Footer />
+
           </div>
         </ThemeProvider>
       </body>
