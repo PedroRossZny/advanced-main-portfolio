@@ -21,7 +21,7 @@ export default function Home() {
 
         {/* Renderiza todos os seus projetos aqui! */}
         <ProjectsSection />
-        
+
       </section>
     </main>
   );
