@@ -39,9 +39,21 @@
 }
 
 body {
+  font-family: var(--font-inter), sans-serif;
+  font-weight: 400;
   background-color: var(--fundo-principal);
   color: var(--texto);
   transition: background-color 0.4s, color 0.4s;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-poppins), sans-serif;
+  font-weight: 700;
 }
 
 /* Customização da Barra de Rolagem Interna */

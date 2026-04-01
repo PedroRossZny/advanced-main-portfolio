@@ -1,31 +1,65 @@
-import ProfileCard from "@/components/ProfileCard";
-import TechSection from "@/components/TechSection";
-import ProjectsSection from "@/components/ProjectsSection";
+"use client";
+
+import { useState } from "react";
 import EducationSection from "@/components/EducationSection";
+import ProfileCard from "@/components/ProfileCard";
+import ProjectsSection from "@/components/ProjectsSection";
+import TechSection from "@/components/TechSection";
+import { useLanguage } from "@/components/LanguageProvider";
+import { findTechnologyByFilter } from "@/data/technologies";
 
 export default function Home() {
+  const { t } = useLanguage();
+  const [activeFilter, setActiveFilter] = useState("");
+  const activeTechnology = findTechnologyByFilter(activeFilter);
+  const filterName = activeTechnology
+    ? activeTechnology.labelKey
+      ? t(activeTechnology.labelKey)
+      : activeTechnology.label
+    : "";
+
+  const handleFilter = (code: string) => {
+    if (activeFilter === code) {
+      setActiveFilter("");
+      return;
+    }
+
+    setActiveFilter(code);
+
+    setTimeout(() => {
+      const projectsElement = document.getElementById("projetos");
+      const detailsElement = document.getElementById("detalhes");
+
+      if (!projectsElement) {
+        return;
+      }
+
+      if (window.innerWidth <= 1024) {
+        const headerHeight = document.querySelector("header")?.offsetHeight ?? 0;
+        const top = projectsElement.getBoundingClientRect().top + window.scrollY - headerHeight - 30;
+
+        window.scrollTo({ top, behavior: "smooth" });
+        return;
+      }
+
+      if (detailsElement) {
+        detailsElement.scrollTo({ top: projectsElement.offsetTop - 50, behavior: "smooth" });
+      }
+    }, 50);
+  };
+
   return (
-    /* O 'main' agora assume o papel do seu CSS original:
-       - grid-cols-1 para celular (empilhado)
-       - grid-cols-[320px_1fr] para desktop (sidebar fixa)
-    */
-    <main className="grid grid-cols-1 md:grid-cols-[320px_1fr] gap-8 w-[98%] max-w-[1500px] mx-auto mt-2.5 md:h-[calc(100vh-90px)] p-4 md:p-0">
-      
-      {/* Coluna da Esquerda: Sua Ficha de Perfil */}
+    <main className="mx-auto grid w-[98%] max-w-[1500px] grid-cols-1 gap-8 p-4 lg:h-full lg:min-h-0 lg:grid-cols-[320px_1fr] lg:overflow-hidden lg:px-0 lg:py-2.5">
       <ProfileCard />
 
-      {/* Coluna da Direita: Onde o conteúdo (Tecnologias, Projetos, etc) vai rolar */}
-      <section id="detalhes" className="md:overflow-y-auto pr-0 md:pr-4 pb-10 scroll-smooth">
-        
-        {/* Renderiza a seção de tecnologias aqui */}
-        <TechSection />
-
-        {/* Renderiza todos os seus projetos aqui! */}
-        <ProjectsSection />
-
-        {/* Renderiza a seção de formação logo abaixo dos projetos */}
+      <section id="detalhes" className="min-h-0 scroll-smooth pb-10 pr-0 md:overflow-y-auto md:pr-4">
+        <TechSection activeFilter={activeFilter} onFilterSelect={handleFilter} />
+        <ProjectsSection
+          activeFilter={activeFilter}
+          filterName={filterName}
+          onClearFilter={() => setActiveFilter("")}
+        />
         <EducationSection />
-
       </section>
     </main>
   );

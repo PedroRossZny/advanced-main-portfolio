@@ -1,20 +1,18 @@
 import type { Metadata } from "next";
 import { Inter, Poppins } from "next/font/google";
 import "./globals.css";
-
-// Importando os seus novos componentes
-import Loader from "@/components/Loader";
-import InteractiveBackground from "@/components/InteractiveBackground";
-import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Header from "@/components/Header";
+import InteractiveBackground from "@/components/InteractiveBackground";
+import { LanguageProvider } from "@/components/LanguageProvider";
+import Loader from "@/components/Loader";
 import { ThemeProvider } from "@/components/ThemeProvider";
 
-// Configuração das fontes (substituindo o @font-face manual por Google Fonts otimizadas)
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
-const poppins = Poppins({ 
-  weight: ["600"], 
-  subsets: ["latin"], 
-  variable: "--font-poppins" 
+const poppins = Poppins({
+  weight: ["700"],
+  subsets: ["latin"],
+  variable: "--font-poppins",
 });
 
 export const metadata: Metadata = {
@@ -24,36 +22,30 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: {
+}: Readonly<{
   children: React.ReactNode;
-}) {
+}>) {
   return (
     <html lang="pt-br" suppressHydrationWarning>
       <head>
-        <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+        <link
+          rel="stylesheet"
+          type="text/css"
+          href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
+        />
       </head>
       <body className={`${inter.variable} ${poppins.variable} font-sans antialiased`}>
-        {/* Envolvendo a aplicação no ThemeProvider */}
         <ThemeProvider>
-                    
-          {/* O Loader aparece primeiro e se auto-remove */}
-          <Loader />
-          
-          {/* O Fundo Interativo fica fixo atrás de tudo */}
-          <InteractiveBackground />
-          
-          <div className="relative z-10 flex flex-col min-h-screen">
-            <Header />
-            
-            {/* O conteúdo das páginas (page.tsx) entra aqui */}
-            <main className="flex-grow">
-              {children}
-            </main>
+          <LanguageProvider>
+            <Loader />
+            <InteractiveBackground />
 
-            {/* Rodapé sempre no final da tela */}
-            <Footer />
-
-          </div>
+            <div className="relative z-10 flex min-h-dvh flex-col lg:h-dvh lg:overflow-hidden">
+              <Header />
+              <main className="flex-grow lg:min-h-0 lg:overflow-hidden">{children}</main>
+              <Footer />
+            </div>
+          </LanguageProvider>
         </ThemeProvider>
       </body>
     </html>

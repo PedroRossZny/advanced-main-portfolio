@@ -1,68 +1,67 @@
 "use client";
 
 import Image from "next/image";
-import { Mail } from "lucide-react";
-import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa6";
 import { motion } from "framer-motion";
+import { FaEnvelope, FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa6";
+import { useLanguage } from "@/components/LanguageProvider";
 
 export default function ProfileCard() {
+  const { t } = useLanguage();
+
   return (
-    <motion.section 
+    <motion.section
       id="ficha"
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8 }}
-      className="md:overflow-y-auto pr-0 md:pr-2.5"
+      className="min-h-0 pr-0 md:overflow-y-auto md:pr-2.5"
     >
-      <article className="bg-[var(--fundo-card)] border border-[var(--borda)] p-5 mb-6 rounded-xl transition-colors duration-400">
-        {/* Foto de Perfil */}
-        <div className="relative w-[180px] h-[180px] mx-auto mb-5">
+      <article className="mb-6 rounded-xl border border-[var(--borda)] bg-[var(--fundo-card)] p-5 transition-colors duration-400">
+        <div className="relative mx-auto mb-2.5 h-[180px] w-[180px]">
           <Image
             src="/images/pedro.jpg"
             alt="Foto de Pedro Henrique Rodrigues Ross"
             fill
-            className="object-cover rounded-full border-4 border-[var(--fundo-principal)] outline-3 outline-[var(--destaque)]"
+            className="rounded-full border-4 border-[var(--fundo-principal)] object-cover outline-3 outline-[var(--destaque)]"
           />
         </div>
 
-        {/* Nome e Descrição */}
-        <h1 className="text-center text-[var(--destaque)] text-[1.4em] font-poppins font-semibold mb-2">
+        <h1 className="mb-2.5 text-center text-[1.4em] font-poppins font-bold text-[var(--destaque)]">
           Pedro Henrique Rodrigues Ross
         </h1>
-        
-        <p className="text-center text-[0.85em] leading-relaxed mb-1.5">
-          Desenvolvedor Full-Stack (Mobile & Web), com foco em Nest.js, Next.js, React Native, React, Node.js, Python, PostgreSQL e desenvolvimento de REST APIs. Atualmente atuo como freelancer, criando projetos web e mobile sob medida.
+
+        <p className="mx-auto mb-2.5 max-w-[32ch] text-center text-[0.8em] leading-relaxed">
+          {t("perfil-descricao")}
         </p>
 
-        {/* Redes Sociais */}
-        <div className="flex justify-center gap-4 mt-2.5 text-[1.4em]">
-          <a 
-            href="mailto:pedrohenriquerodriguesross@gmail.com" 
-            className="text-[var(--texto-mutado)] hover:text-[var(--destaque)] hover:scale-110 transition-all duration-300"
+        <div className="flex justify-center gap-4 pt-2 text-[1.4em]">
+          <a
+            href="mailto:pedrohenriquerodriguesross@gmail.com"
+            className="text-[var(--texto-mutado)] transition-all duration-300 hover:scale-110 hover:text-[var(--destaque)]"
           >
-            <Mail size={24} />
+            <FaEnvelope size={24} />
           </a>
-          <a 
-            href="https://www.linkedin.com/in/pedro-ross" 
-            target="_blank" 
+          <a
+            href="https://www.linkedin.com/in/pedro-ross"
+            target="_blank"
             rel="nofollow"
-            className="text-[var(--texto-mutado)] hover:text-[var(--destaque)] hover:scale-110 transition-all duration-300"
+            className="text-[var(--texto-mutado)] transition-all duration-300 hover:scale-110 hover:text-[var(--destaque)]"
           >
             <FaLinkedin size={24} />
           </a>
-          <a 
-            href="https://github.com/PedroRossZny" 
-            target="_blank" 
+          <a
+            href="https://github.com/PedroRossZny"
+            target="_blank"
             rel="nofollow"
-            className="text-[var(--texto-mutado)] hover:text-[var(--destaque)] hover:scale-110 transition-all duration-300"
+            className="text-[var(--texto-mutado)] transition-all duration-300 hover:scale-110 hover:text-[var(--destaque)]"
           >
             <FaGithub size={24} />
           </a>
-          <a 
-            href="https://www.instagram.com/pedro.rzny/" 
-            target="_blank" 
+          <a
+            href="https://www.instagram.com/pedro.rzny/"
+            target="_blank"
             rel="nofollow"
-            className="text-[var(--texto-mutado)] hover:text-[var(--destaque)] hover:scale-110 transition-all duration-300"
+            className="text-[var(--texto-mutado)] transition-all duration-300 hover:scale-110 hover:text-[var(--destaque)]"
           >
             <FaInstagram size={24} />
           </a>
