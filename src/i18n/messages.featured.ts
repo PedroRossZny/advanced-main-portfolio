@@ -19,6 +19,57 @@ export const featuredMessages = {
     "T4-laborwaze": "Contato",
     "P6-laborwaze":
       "Para dúvidas, propostas ou qualquer tipo de contato, é possível entrar em contato pelo e-mail abaixo:",
+    "titulo-unipass": "UniPass - Transporte com IoT",
+    "resumo-unipass":
+      "Plataforma SaaS com controle de presença via RFID, integração IoT com ESP32 e 4G e monitoramento em tempo real para frotas.",
+    "T1-unipass": "O problema e a solução",
+    "P1-unipass":
+      "O UniPass foi criado para resolver um desafio real da operação logística. A proposta foi substituir processos dispersos por uma plataforma conectada, unindo gestão, rastreamento e controle de acesso em uma experiência simples para quem vive a rotina do transporte todos os dias.",
+    "T2-unipass": "Funcionalidades e diferenciais",
+    "P2-unipass":
+      "O sistema opera como uma plataforma SaaS com arquitetura multiempresa (multi-tenant), reunindo em um só ecossistema:",
+    "L1-unipass":
+      "<strong>Gestão Centralizada:</strong> Dashboard web para administrar alunos, veículos, usuários e dispositivos de forma organizada.",
+    "L2-unipass":
+      "<strong>Integração IoT:</strong> Comunicação com dispositivos ESP32 via conectividade 4G para telemetria, localização e leitura de tags RFID.",
+    "L3-unipass":
+      "<strong>Controle de Embarque:</strong> Validação automática da capacidade do veículo e registro de presença dos passageiros em tempo real.",
+    "L4-unipass":
+      "<strong>Resiliência Offline-First:</strong> Operação preparada para áreas de sombra, com sincronização automática quando a conexão é restabelecida.",
+    "T3-unipass": "Visão técnica e próximos passos",
+    "P3-unipass":
+      "Mais do que desenvolver telas, o foco foi estruturar um produto com visão de operação, confiabilidade e escala. O projeto utiliza Next.js no frontend, NestJS no backend e PostgreSQL com Prisma na camada de dados, criando uma base sólida para a próxima etapa: expandir a experiência com um aplicativo mobile.",
+    "T4-unipass": "Tecnologias utilizadas",
+    "titulo-portfolio-eco": "Plataforma de Portfólio (Ecossistema)",
+    "resumo-portfolio-eco":
+      "A evolução da minha plataforma de apresentação pessoal, de Vanilla JS até Next.js com TypeScript e Tailwind CSS.",
+    "T1-portfolio-eco": "Sobre o ecossistema",
+    "P1-portfolio-eco":
+      "Este projeto é o reflexo direto da minha evolução técnica. Ele é composto por três repositórios distintos que representam diferentes fases do meu desenvolvimento Front-End.",
+    "T2-portfolio-eco": "1. Portfólio Avançado (Next.js & React) - Versão Atual",
+    "P2-portfolio-eco":
+      "A versão definitiva, construída com foco absoluto em performance, SEO e componentização inteligente.",
+    "L1-portfolio-eco":
+      "<strong>Stack Moderna:</strong> Desenvolvido utilizando o framework Next.js, React e tipagem estática com TypeScript para maior segurança.",
+    "L2-portfolio-eco":
+      "<strong>Estilização e Animações:</strong> Uso intensivo de Tailwind CSS para estilização utilitária rápida e Framer Motion para orquestrar transições complexas.",
+    "L3-portfolio-eco":
+      "<strong>Gerenciamento Global:</strong> Implementação nativa da Context API e do useSyncExternalStore para controle de internacionalização (i18n) e integração com next-themes para o Dark/Light Mode.",
+    "T3-portfolio-eco": "2. Portfólio Principal (Vanilla JS)",
+    "P3-portfolio-eco":
+      "A versão raiz que estabeleceu toda a identidade visual, lógica de filtros e responsividade sem a dependência de frameworks ou bibliotecas externas.",
+    "L4-portfolio-eco":
+      "Manipulação avançada de DOM para criação de um sistema de filtros dinâmicos de tecnologias.",
+    "L5-portfolio-eco":
+      "Lógica de internacionalização e alternância de temas desenvolvidas do zero com JavaScript puro e persistidas via localStorage.",
+    "L6-portfolio-eco":
+      "Animações desenhadas via @keyframes, englobando o loader customizado e um fundo interativo com máscara de luz guiada pelo cursor.",
+    "T4-portfolio-eco": "3. Portfólio Base (Template Open-Source)",
+    "P4-portfolio-eco":
+      "Uma refatoração da versão Vanilla criada especificamente para ser um template reutilizável para a comunidade.",
+    "L7-portfolio-eco":
+      "Código limpo, estruturado e pronto para que outros desenvolvedores possam clonar, customizar com seus próprios dados e implantar rapidamente um portfólio interativo de alto nível.",
+    "T5-portfolio-eco": "Tecnologias utilizadas",
     "titulo-painel": "Painel de Chamadas",
     "resumo-painel":
       "Sistema full-stack desenvolvido para otimizar o fluxo de atendimento em hospitais.",
@@ -96,6 +147,57 @@ export const featuredMessages = {
     "T4-laborwaze": "Contact",
     "P6-laborwaze":
       "For questions, proposals, or any type of contact, you can get in touch through the email below:",
+    "titulo-unipass": "UniPass - IoT Transportation",
+    "resumo-unipass":
+      "SaaS platform with RFID attendance control, ESP32 and 4G IoT integration, and real-time fleet monitoring.",
+    "T1-unipass": "The problem and the solution",
+    "P1-unipass":
+      "UniPass was created to solve a real logistics operation challenge. The proposal was to replace scattered processes with a connected platform, bringing management, tracking, and access control together in a simple experience for the people who live the transport routine every day.",
+    "T2-unipass": "Features and differentiators",
+    "P2-unipass":
+      "The system operates as a SaaS platform with a multi-company (multi-tenant) architecture, bringing together in a single ecosystem:",
+    "L1-unipass":
+      "<strong>Centralized Management:</strong> Web dashboard to manage students, vehicles, users, and devices in an organized way.",
+    "L2-unipass":
+      "<strong>IoT Integration:</strong> Communication with ESP32 devices through 4G connectivity for telemetry, location tracking, and RFID tag reading.",
+    "L3-unipass":
+      "<strong>Boarding Control:</strong> Automatic vehicle capacity validation and real-time passenger presence logging.",
+    "L4-unipass":
+      "<strong>Offline-First Resilience:</strong> Operation designed for coverage gaps, with automatic synchronization once the connection is restored.",
+    "T3-unipass": "Technical view and next steps",
+    "P3-unipass":
+      "More than building screens, the focus was to structure a product with an operational, reliable, and scalable vision. The project uses Next.js on the frontend, NestJS on the backend, and PostgreSQL with Prisma in the data layer, creating a solid foundation for the next step: expanding the experience with a mobile app.",
+    "T4-unipass": "Technologies used",
+    "titulo-portfolio-eco": "Portfolio Platform (Ecosystem)",
+    "resumo-portfolio-eco":
+      "The evolution of my personal presentation platform, from Vanilla JS to Next.js with TypeScript and Tailwind CSS.",
+    "T1-portfolio-eco": "About the ecosystem",
+    "P1-portfolio-eco":
+      "This project is a direct reflection of my technical evolution. It is composed of three distinct repositories that represent different phases of my Front-End development.",
+    "T2-portfolio-eco": "1. Advanced Portfolio (Next.js & React) - Current Version",
+    "P2-portfolio-eco":
+      "The definitive version, built with an absolute focus on performance, SEO, and smart componentization.",
+    "L1-portfolio-eco":
+      "<strong>Modern Stack:</strong> Built using the Next.js framework, React, and static typing with TypeScript for greater safety.",
+    "L2-portfolio-eco":
+      "<strong>Styling and Animations:</strong> Heavy use of Tailwind CSS for fast utility-first styling and Framer Motion to orchestrate complex transitions.",
+    "L3-portfolio-eco":
+      "<strong>Global Management:</strong> Native implementation of Context API and useSyncExternalStore to handle internationalization (i18n) and integration with next-themes for Dark/Light Mode.",
+    "T3-portfolio-eco": "2. Main Portfolio (Vanilla JS)",
+    "P3-portfolio-eco":
+      "The root version that established the full visual identity, filtering logic, and responsiveness without relying on frameworks or external libraries.",
+    "L4-portfolio-eco":
+      "Advanced DOM manipulation to build a dynamic technology filtering system.",
+    "L5-portfolio-eco":
+      "Internationalization logic and theme toggling built from scratch with pure JavaScript and persisted via localStorage.",
+    "L6-portfolio-eco":
+      "Animations designed with @keyframes, including the custom loader and an interactive background with a cursor-guided light mask.",
+    "T4-portfolio-eco": "3. Base Portfolio (Open-Source Template)",
+    "P4-portfolio-eco":
+      "A refactor of the Vanilla version created specifically to become a reusable template for the community.",
+    "L7-portfolio-eco":
+      "Clean, structured code ready for other developers to clone, customize with their own data, and quickly deploy a high-quality interactive portfolio.",
+    "T5-portfolio-eco": "Technologies used",
     "titulo-painel": "Call Panel",
     "resumo-painel":
       "Full-stack system developed to optimize the service flow in hospitals.",

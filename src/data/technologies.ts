@@ -3,6 +3,7 @@ export interface TechnologyItem {
   icon: string;
   label: string;
   labelKey?: string;
+  iconType?: "class" | "custom";
 }
 
 export interface TechnologyGroup {
@@ -17,6 +18,7 @@ export const technologyGroups: TechnologyGroup[] = [
       { label: "HTML5", icon: "devicon-html5-plain", filter: "html5" },
       { label: "CSS3", icon: "devicon-css3-plain", filter: "css3" },
       { label: "JavaScript", icon: "devicon-javascript-plain", filter: "javascript" },
+      { label: "React", icon: "devicon-react-original", filter: "react" },
       { label: "Next.js", icon: "devicon-nextjs-plain", filter: "nextjs" },
       { label: "TypeScript", icon: "devicon-typescript-plain", filter: "typescript" },
       { label: "React Native", icon: "devicon-reactnative-original", filter: "reactnative" },
@@ -32,6 +34,7 @@ export const technologyGroups: TechnologyGroup[] = [
       { label: "NestJS", icon: "devicon-nestjs-original", filter: "nestjs" },
       { label: "Express.js", icon: "devicon-express-original", filter: "express" },
       { label: "PostgreSQL", icon: "devicon-postgresql-plain", filter: "postgresql" },
+      { label: "Prisma", icon: "devicon-prisma-original", filter: "prisma" },
       { label: "SQLite", icon: "devicon-sqlite-plain", filter: "sqlite" },
       { label: "Sequelize", icon: "devicon-sequelize-plain", filter: "sequelize" },
     ],
@@ -50,6 +53,7 @@ export const technologyGroups: TechnologyGroup[] = [
       },
       { label: "Axios", icon: "devicon-axios-plain", filter: "axios" },
       { label: "UI Libs", labelKey: "ui-libs", icon: "devicon-materialui-plain", filter: "recursosui" },
+      { label: "IoT", icon: "iot", iconType: "custom", filter: "iot" },
     ],
   },
 ];
