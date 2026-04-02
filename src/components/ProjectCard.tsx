@@ -165,7 +165,8 @@ export default function ProjectCard({
     };
   }, [clearPendingScroll, registerProject, stableProjectId, unregisterProject]);
 
-  const isVisible = !activeFilter || techs.includes(activeFilter);
+  const techTokens = techs.split(/\s+/).filter(Boolean);
+  const isVisible = !activeFilter || techTokens.includes(activeFilter);
   const expandedIndex = expandedOrder.indexOf(stableProjectId);
   const baseIndex = projectOrder.indexOf(stableProjectId);
   const isExpanded = expandedIndex !== -1;

@@ -1,13 +1,26 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Laptop } from "lucide-react";
+import { Cpu, Laptop } from "lucide-react";
 import { useLanguage } from "@/components/LanguageProvider";
-import { technologyGroups } from "@/data/technologies";
+import { technologyGroups, type TechnologyItem } from "@/data/technologies";
 
 interface TechSectionProps {
   activeFilter: string;
   onFilterSelect: (code: string) => void;
+}
+
+function TechnologyIcon({ technology }: { technology: TechnologyItem }) {
+  if (technology.iconType === "custom") {
+    switch (technology.icon) {
+      case "iot":
+        return <Cpu size={18} className="shrink-0" />;
+      default:
+        return null;
+    }
+  }
+
+  return <i className={`${technology.icon} text-lg`} />;
 }
 
 export default function TechSection({ activeFilter, onFilterSelect }: TechSectionProps) {
@@ -59,7 +72,7 @@ export default function TechSection({ activeFilter, onFilterSelect }: TechSectio
                           : "border-[var(--borda)] bg-[var(--fundo-card)] text-[var(--texto)] hover:-translate-y-1 hover:border-[var(--destaque)] hover:bg-[var(--fundo-card)] hover:text-[var(--destaque)]"
                       }`}
                   >
-                    <i className={`${tech.icon} text-lg`} />
+                    <TechnologyIcon technology={tech} />
                     {label}
                   </button>
                 );

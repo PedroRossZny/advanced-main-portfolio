@@ -163,7 +163,12 @@ export default function ProjectsSection({
 
       {section.descriptionKey ? <p className="mb-4 leading-relaxed">{t(section.descriptionKey)}</p> : null}
 
-      <div className={technologyGridClassName}>
+      <div
+        className={[
+          technologyGridClassName,
+          section.fillLastRow ? "[&>*:last-child]:col-span-full" : "",
+        ].join(" ")}
+      >
         {section.techGroups?.map((group) => (
           <div
             key={`${projectTitle}-${group.titleKey}`}

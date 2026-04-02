@@ -24,6 +24,7 @@ export interface ProjectSection {
   descriptionKey?: string;
   href?: string;
   techGroups?: ProjectTechGroup[];
+  fillLastRow?: boolean;
 }
 
 export interface ProjectDefinition {
@@ -77,12 +78,105 @@ export const projects: ProjectDefinition[] = [
     ],
   },
   {
+    projectId: "unipass",
+    titleKey: "titulo-unipass",
+    summaryKey: "resumo-unipass",
+    imageSrc: "/images/projects/unipass-project.png",
+    iconSrc: "/images/icons/unipass-icon.png",
+    techs: "react nextjs typescript tailwindcss nestjs nodejs prisma postgresql git github iot",
+    sections: [
+      { type: "content", headingKey: "T1-unipass", paragraphKeys: ["P1-unipass"] },
+      {
+        type: "content",
+        headingKey: "T2-unipass",
+        paragraphKeys: ["P2-unipass"],
+        listKeys: ["L1-unipass", "L2-unipass", "L3-unipass", "L4-unipass"],
+      },
+      { type: "content", headingKey: "T3-unipass", paragraphKeys: ["P3-unipass"] },
+      {
+        type: "tech",
+        headingKey: "T4-unipass",
+        fillLastRow: true,
+        techGroups: [
+          { titleKey: "frontend", items: ["Next.js", "React", "TypeScript", "Tailwind CSS"] },
+          { titleKey: "backend", items: ["NestJS", "Node.js", "Prisma"] },
+          { titleKey: "banco-de-dados", items: ["PostgreSQL"] },
+          { titleKey: "iot-dispositivos", items: ["ESP32", "RFID", "4G"] },
+          { titleKey: "ferramentas", items: ["Git", "GitHub"] },
+        ],
+      },
+    ],
+  },
+  {
+    projectId: "portfolio-ecosystem",
+    titleKey: "titulo-portfolio-eco",
+    summaryKey: "resumo-portfolio-eco",
+    imageSrc: "/images/projects/portfolio-ecosystem-project.png",
+    iconSrc: "/images/icons/portfolio-ecosystem-icon.png",
+    techs: "html5 css3 javascript react typescript nextjs tailwindcss git github",
+    sections: [
+      { type: "content", headingKey: "T1-portfolio-eco", paragraphKeys: ["P1-portfolio-eco"] },
+      {
+        type: "content",
+        headingKey: "T2-portfolio-eco",
+        paragraphKeys: ["P2-portfolio-eco"],
+        listKeys: ["L1-portfolio-eco", "L2-portfolio-eco", "L3-portfolio-eco"],
+      },
+      {
+        type: "content",
+        headingKey: "T3-portfolio-eco",
+        paragraphKeys: ["P3-portfolio-eco"],
+        listKeys: ["L4-portfolio-eco", "L5-portfolio-eco", "L6-portfolio-eco"],
+      },
+      {
+        type: "content",
+        headingKey: "T4-portfolio-eco",
+        paragraphKeys: ["P4-portfolio-eco"],
+        listKeys: ["L7-portfolio-eco"],
+      },
+      {
+        type: "links",
+        links: [
+          {
+            href: "https://github.com/PedroRossZny/advanced-main-portfolio",
+            icon: "github",
+            labelKey: "github-repo-next",
+            className: githubButtonClassName,
+          },
+          {
+            href: "https://github.com/PedroRossZny/basic-main-portfolio",
+            icon: "github",
+            labelKey: "github-repo-vanilla",
+            className: githubButtonClassName,
+          },
+          {
+            href: "https://github.com/PedroRossZny/basic-base-portfolio",
+            icon: "github",
+            labelKey: "github-repo-template",
+            className: githubButtonClassName,
+          },
+        ],
+      },
+      {
+        type: "tech",
+        headingKey: "T5-portfolio-eco",
+        techGroups: [
+          {
+            titleKey: "frontend",
+            items: ["Next.js", "React", "TypeScript", "Tailwind CSS", "HTML5 & CSS3", "JavaScript"],
+          },
+          { titleKey: "ferramentas", items: ["Git", "GitHub"] },
+        ],
+      },
+    ],
+  },
+  {
     projectId: "painel",
     titleKey: "titulo-painel",
     summaryKey: "resumo-painel",
     imageSrc: "/images/projects/painel-project.png",
     iconSrc: "/images/icons/painel-chamadas-icon.png",
-    techs: "nextjs typescript tailwindcss nestjs postgresql git github",
+    techs: "react nextjs typescript tailwindcss nestjs postgresql git github",
     sections: [
       {
         type: "content",
@@ -104,7 +198,7 @@ export const projects: ProjectDefinition[] = [
         headingKey: "T4-painel",
         descriptionKey: "P11-painel",
         techGroups: [
-          { titleKey: "frontend", items: ["Next.js", "TypeScript", "Tailwind CSS"] },
+          { titleKey: "frontend", items: ["Next.js", "React", "TypeScript", "Tailwind CSS"] },
           { titleKey: "backend", items: ["NestJS"] },
           { titleKey: "banco-de-dados", items: ["PostgreSQL"] },
           { titleKey: "ferramentas", items: ["Git", "GitHub"] },
@@ -118,7 +212,7 @@ export const projects: ProjectDefinition[] = [
     summaryKey: "resumo-spacex",
     imageSrc: "/images/projects/spacex-project.png",
     iconSrc: "/images/icons/space-icon.png",
-    techs: "reactnative expo javascript styledcomponents git github axios ecossistemareactnative",
+    techs: "react reactnative expo javascript styledcomponents git github axios ecossistemareactnative",
     sections: [
       { type: "content", headingKey: "T1-spacex", paragraphKeys: ["P1-spacex", "P2-spacex", "P3-spacex", "P4-spacex"] },
       {
@@ -132,7 +226,7 @@ export const projects: ProjectDefinition[] = [
         type: "tech",
         headingKey: "T4-spacex",
         techGroups: [
-          { titleKey: "frontend", items: ["React Native", "Expo", "JavaScript", "Styled Components"] },
+          { titleKey: "frontend", items: ["React", "React Native", "Expo", "JavaScript", "Styled Components"] },
           { titleKey: "ferramentas", items: ["Git", "GitHub", "Expo Router", "React Native Reanimated", "Axios", "AsyncStorage"] },
         ],
       },
@@ -144,7 +238,7 @@ export const projects: ProjectDefinition[] = [
     summaryKey: "resumo-ambiente",
     imageSrc: "/images/projects/sos-ambiente-project.png",
     iconSrc: "/images/icons/ambiente-icon.png",
-    techs: "reactnative expo javascript git github ecossistemareactnative",
+    techs: "react reactnative expo javascript git github ecossistemareactnative",
     sections: [
       { type: "content", headingKey: "T1-ambiente", paragraphKeys: ["P1-ambiente", "P2-ambiente", "P3-ambiente"] },
       {
@@ -158,7 +252,7 @@ export const projects: ProjectDefinition[] = [
         type: "tech",
         headingKey: "T5-ambiente",
         techGroups: [
-          { titleKey: "frontend", items: ["React Native", "Expo", "JavaScript"] },
+          { titleKey: "frontend", items: ["React", "React Native", "Expo", "JavaScript"] },
           { titleKey: "ferramentas", items: ["Git", "GitHub", "React Navigation", "Context API", "React Native Animated"] },
         ],
       },
@@ -170,7 +264,7 @@ export const projects: ProjectDefinition[] = [
     summaryKey: "resumo-coffee",
     imageSrc: "/images/projects/smoke-coffee-project.png",
     iconSrc: "/images/icons/cafe-icon.png",
-    techs: "reactnative expo javascript git github ecossistemareactnative",
+    techs: "react reactnative expo javascript git github ecossistemareactnative",
     sections: [
       { type: "content", headingKey: "T1-coffee", paragraphKeys: ["P1-coffee", "P2-coffee", "P3-coffee", "P4-coffee"] },
       {
@@ -183,7 +277,7 @@ export const projects: ProjectDefinition[] = [
         type: "tech",
         headingKey: "T4-coffee",
         techGroups: [
-          { titleKey: "frontend", items: ["React Native", "Expo", "JavaScript"] },
+          { titleKey: "frontend", items: ["React", "React Native", "Expo", "JavaScript"] },
           { titleKey: "ferramentas", items: ["Git", "GitHub", "React Navigation", "AsyncStorage", "Expo Notifications"] },
         ],
       },
