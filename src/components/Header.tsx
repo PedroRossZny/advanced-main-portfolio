@@ -58,7 +58,7 @@ export default function Header() {
   };
 
   return (
-    <header className="sticky top-0 z-50 flex justify-center border-b border-[var(--borda)] bg-[var(--fundo-card)] px-5 py-2 transition-colors duration-400 lg:justify-end">
+    <header className="sticky top-0 z-50 flex justify-center border-b border-(--borda) bg-(--fundo-card) px-5 py-2 transition-colors duration-400 lg:justify-end">
       <nav id="menu" className="flex w-full justify-center lg:justify-end">
         <ul className="m-0 flex list-none justify-center gap-4 p-0">
           <li>

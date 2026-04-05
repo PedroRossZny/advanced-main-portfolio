@@ -49,7 +49,7 @@ export default function Home() {
   };
 
   return (
-    <main className="mx-auto grid w-[98%] max-w-[1500px] grid-cols-1 gap-8 p-4 lg:h-full lg:min-h-0 lg:grid-cols-[320px_1fr] lg:overflow-hidden lg:px-0 lg:py-2.5">
+    <main className="mx-auto grid w-[98%] max-w-375 grid-cols-1 gap-8 p-4 lg:h-full lg:min-h-0 lg:grid-cols-[320px_1fr] lg:overflow-hidden lg:px-0 lg:py-2.5">
       <ProfileCard />
 
       <section id="detalhes" className="min-h-0 scroll-smooth pb-10 pr-0 md:overflow-y-auto md:pr-4">

@@ -42,7 +42,7 @@ export default function RootLayout({
 
             <div className="relative z-10 flex min-h-dvh flex-col lg:h-dvh lg:overflow-hidden">
               <Header />
-              <main className="flex-grow lg:min-h-0 lg:overflow-hidden">{children}</main>
+              <main className="grow lg:min-h-0 lg:overflow-hidden">{children}</main>
               <Footer />
             </div>
           </LanguageProvider>
