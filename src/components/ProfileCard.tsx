@@ -16,17 +16,17 @@ export default function ProfileCard() {
       transition={{ duration: 0.8 }}
       className="min-h-0 pr-0 md:overflow-y-auto md:pr-2.5"
     >
-      <article className="mb-6 rounded-xl border border-[var(--borda)] bg-[var(--fundo-card)] p-5 transition-colors duration-400">
-        <div className="relative mx-auto mb-2.5 h-[180px] w-[180px]">
+      <article className="mb-6 rounded-xl border border-(--borda) bg-(--fundo-card) p-5 transition-colors duration-400">
+        <div className="relative mx-auto mb-2.5 h-45 w-45">
           <Image
             src="/images/pedro.jpg"
             alt="Foto de Pedro Henrique Rodrigues Ross"
             fill
-            className="rounded-full border-4 border-[var(--fundo-principal)] object-cover outline-3 outline-[var(--destaque)]"
+            className="rounded-full border-4 border-(--fundo-principal) object-cover outline-3 outline-(--destaque)"
           />
         </div>
 
-        <h1 className="mb-2.5 text-center text-[1.4em] font-poppins font-bold text-[var(--destaque)]">
+        <h1 className="mb-2.5 text-center text-[1.4em] font-poppins font-bold text-(--destaque)">
           Pedro Henrique Rodrigues Ross
         </h1>
 
@@ -37,7 +37,7 @@ export default function ProfileCard() {
         <div className="flex justify-center gap-4 pt-2 text-[1.4em]">
           <a
             href="mailto:pedrohenriquerodriguesross@gmail.com"
-            className="text-[var(--texto-mutado)] transition-all duration-300 hover:scale-110 hover:text-[var(--destaque)]"
+            className="text-(--texto-mutado) transition-all duration-300 hover:scale-110 hover:text-(--destaque)"
           >
             <FaEnvelope size={24} />
           </a>
@@ -45,7 +45,7 @@ export default function ProfileCard() {
             href="https://www.linkedin.com/in/pedro-ross"
             target="_blank"
             rel="nofollow"
-            className="text-[var(--texto-mutado)] transition-all duration-300 hover:scale-110 hover:text-[var(--destaque)]"
+            className="text-(--texto-mutado) transition-all duration-300 hover:scale-110 hover:text-(--destaque)"
           >
             <FaLinkedin size={24} />
           </a>
@@ -53,7 +53,7 @@ export default function ProfileCard() {
             href="https://github.com/PedroRossZny"
             target="_blank"
             rel="nofollow"
-            className="text-[var(--texto-mutado)] transition-all duration-300 hover:scale-110 hover:text-[var(--destaque)]"
+            className="text-(--texto-mutado) transition-all duration-300 hover:scale-110 hover:text-(--destaque)"
           >
             <FaGithub size={24} />
           </a>
@@ -61,7 +61,7 @@ export default function ProfileCard() {
             href="https://www.instagram.com/pedro.rzny/"
             target="_blank"
             rel="nofollow"
-            className="text-[var(--texto-mutado)] transition-all duration-300 hover:scale-110 hover:text-[var(--destaque)]"
+            className="text-(--texto-mutado) transition-all duration-300 hover:scale-110 hover:text-(--destaque)"
           >
             <FaInstagram size={24} />
           </a>

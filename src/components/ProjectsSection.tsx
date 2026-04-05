@@ -65,7 +65,7 @@ export default function ProjectsSection({
 
         {hasMedia ? (
           <div className="block">
-            <div className="mb-4 aspect-video overflow-hidden rounded-xl border border-[var(--borda)] shadow-lg lg:float-right lg:mb-4 lg:ml-6 lg:w-[420px]">
+            <div className="mb-4 aspect-video overflow-hidden rounded-xl border border-(--borda) shadow-lg lg:float-right lg:mb-4 lg:ml-6 lg:w-105">
               <iframe
                 className="h-full w-full"
                 src={section.videoSrc}
@@ -86,7 +86,7 @@ export default function ProjectsSection({
             ))}
 
             {section.listKeys ? (
-              <ul className="mb-2.5 ml-6 list-disc space-y-1 text-[var(--texto)] leading-relaxed">
+              <ul className="mb-2.5 ml-6 list-disc space-y-1 text-(--texto) leading-relaxed">
                 {section.listKeys.map((key) => (
                   <li key={key} dangerouslySetInnerHTML={html(key)} />
                 ))}
@@ -106,7 +106,7 @@ export default function ProjectsSection({
             ))}
 
             {section.listKeys ? (
-              <ul className="ml-6 list-disc space-y-1 text-[var(--texto)] leading-relaxed">
+              <ul className="ml-6 list-disc space-y-1 text-(--texto) leading-relaxed">
                 {section.listKeys.map((key) => (
                   <li key={key} dangerouslySetInnerHTML={html(key)} />
                 ))}
@@ -137,15 +137,15 @@ export default function ProjectsSection({
 
   const renderDownloadSection = (section: ProjectSection, projectTitle: string) => (
     <div
-      className="my-8 flex flex-col items-center gap-5 rounded-xl border border-[var(--borda)] bg-[var(--fundo-card)] p-5 sm:flex-row"
+      className="my-8 flex flex-col items-center gap-5 rounded-xl border border-(--borda) bg-(--fundo-card) p-5 sm:flex-row"
       key={`${projectTitle}-download`}
     >
       <div className="shrink-0 text-4xl text-red-500">
         <FaFilePdf />
       </div>
       <div className="text-center sm:text-left">
-        <p className="mb-1 font-semibold text-[var(--texto)]">{t(section.titleKey ?? "")}</p>
-        <p className="mb-3 text-sm text-[var(--texto-mutado)]">{t(section.descriptionKey ?? "")}</p>
+        <p className="mb-1 font-semibold text-(--texto)">{t(section.titleKey ?? "")}</p>
+        <p className="mb-3 text-sm text-(--texto-mutado)">{t(section.descriptionKey ?? "")}</p>
         <a
           href={section.href}
           download
@@ -172,10 +172,10 @@ export default function ProjectsSection({
         {section.techGroups?.map((group) => (
           <div
             key={`${projectTitle}-${group.titleKey}`}
-            className="rounded-lg border border-[var(--borda)] bg-[var(--fundo-card)] p-3"
+            className="rounded-lg border border-(--borda) bg-(--fundo-card) p-3"
           >
-            <h5 className="mb-2 text-sm font-semibold text-[var(--texto)]">{t(group.titleKey)}</h5>
-            <ul className="m-0 list-none space-y-1 p-0 text-sm text-[var(--texto-mutado)]">
+            <h5 className="mb-2 text-sm font-semibold text-(--texto)">{t(group.titleKey)}</h5>
+            <ul className="m-0 list-none space-y-1 p-0 text-sm text-(--texto-mutado)">
               {group.items.map((item) => (
                 <li key={item}>{item}</li>
               ))}
@@ -203,15 +203,15 @@ export default function ProjectsSection({
   return (
     <article
       id="projetos"
-      className="mb-10 min-h-[400px] rounded-xl border border-[var(--borda)] bg-[var(--fundo-card)] p-6 transition-colors duration-400"
+      className="mb-10 min-h-100 rounded-xl border border-(--borda) bg-(--fundo-card) p-6 transition-colors duration-400"
     >
-      <header className="mb-6 flex items-center justify-between border-b-2 border-[var(--borda)] pb-3">
-        <div className="flex items-center gap-2 text-[var(--destaque)]">
+      <header className="mb-6 flex items-center justify-between border-b-2 border-(--borda) pb-3">
+        <div className="flex items-center gap-2 text-(--destaque)">
           <Wrench size={24} />
           <h2 className="text-xl font-poppins font-semibold uppercase tracking-wide">
             {t("titulo-projetos")}
           </h2>
-          <span className="ml-2 text-sm font-normal text-[var(--texto-mutado)]">
+          <span className="ml-2 text-sm font-normal text-(--texto-mutado)">
             {filterName ? `- ${filterName}` : ""}
           </span>
         </div>
@@ -220,7 +220,7 @@ export default function ProjectsSection({
           <button
             type="button"
             onClick={onClearFilter}
-            className="cursor-pointer font-semibold text-[var(--texto-mutado)] transition-all hover:scale-110 hover:text-red-500 active:scale-95"
+            className="cursor-pointer font-semibold text-(--texto-mutado) transition-all hover:scale-110 hover:text-red-500 active:scale-95"
           >
             {t("limpar-filtro")}
           </button>

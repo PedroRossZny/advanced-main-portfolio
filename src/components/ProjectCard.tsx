@@ -218,11 +218,11 @@ export default function ProjectCard({
             }
       }
       className={[
-        "projeto flex h-full flex-col self-stretch overflow-hidden rounded-2xl border bg-[var(--fundo-principal)]",
+        "projeto flex h-full flex-col self-stretch overflow-hidden rounded-2xl border bg-(--fundo-principal)",
         "transition-[transform,box-shadow,border-color] duration-500",
         isExpanded
-          ? "z-20 border-[var(--destaque)] shadow-[0_28px_80px_rgba(15,23,42,0.22)] md:col-span-2 xl:col-span-3"
-          : "border-[var(--borda)] shadow-sm hover:-translate-y-1 hover:shadow-[0_18px_40px_rgba(15,23,42,0.14)]",
+          ? "z-20 border-(--destaque) shadow-[0_28px_80px_rgba(15,23,42,0.22)] md:col-span-2 xl:col-span-3"
+          : "border-(--borda) shadow-sm hover:-translate-y-1 hover:shadow-[0_18px_40px_rgba(15,23,42,0.14)]",
       ].join(" ")}
     >
       <motion.div ref={toggleAreaRef} layout="position" className="flex justify-end pb-2 pl-3 pr-2 pt-2">
@@ -238,8 +238,8 @@ export default function ProjectCard({
           className={[
             "origin-center cursor-pointer rounded-full p-2 transition-colors duration-300",
             isExpanded
-              ? "text-[var(--destaque)]"
-              : "text-[var(--texto-mutado)] hover:text-[var(--destaque)]",
+              ? "text-(--destaque)"
+              : "text-(--texto-mutado) hover:text-(--destaque)",
           ].join(" ")}
         >
           {isExpanded ? <Shrink size={20} /> : <Expand size={20} />}
@@ -258,7 +258,7 @@ export default function ProjectCard({
                 ? { duration: 0 }
                 : { duration: 0.36, ease: [0.22, 1, 0.36, 1] }
             }
-            className="relative w-full overflow-hidden border-b border-[var(--borda)]"
+            className="relative w-full overflow-hidden border-b border-(--borda)"
           >
             <div className="relative h-48 w-full">
               <Image
@@ -288,7 +288,7 @@ export default function ProjectCard({
                   ? { duration: 0 }
                   : { duration: 0.32, ease: [0.22, 1, 0.36, 1] }
               }
-              className="relative hidden h-[52px] w-[52px] shrink-0 overflow-hidden rounded-xl border border-[var(--borda)] bg-[var(--fundo-principal)] md:block"
+              className="relative hidden h-13 w-13 shrink-0 overflow-hidden rounded-xl border border-(--borda) bg-(--fundo-principal) md:block"
             >
               <Image
                 src={iconSrc}
@@ -301,12 +301,12 @@ export default function ProjectCard({
         </AnimatePresence>
 
         <div className="flex grow flex-col">
-          <h3 className="text-lg font-poppins font-semibold leading-tight text-[var(--texto)] md:text-[1.15rem]">
+          <h3 className="text-lg font-poppins font-semibold leading-tight text-(--texto) md:text-[1.15rem]">
             {title}
           </h3>
           <p
             className={[
-              "mt-1 text-[var(--texto-mutado)] transition-[font-size,transform] duration-300",
+              "mt-1 text-(--texto-mutado) transition-[font-size,transform] duration-300",
               isExpanded ? "text-sm md:text-[0.95rem]" : "text-xs",
             ].join(" ")}
           >
@@ -327,11 +327,11 @@ export default function ProjectCard({
                 ? { duration: 0 }
                 : { duration: 0.42, ease: [0.22, 1, 0.36, 1] }
             }
-            className="overflow-hidden border-t border-[var(--borda)] bg-[var(--fundo-card)]"
+            className="overflow-hidden border-t border-(--borda) bg-(--fundo-card)"
           >
             <motion.div
               layout
-              className="px-5 pb-5 pt-3 text-sm leading-relaxed text-[var(--texto)] md:px-6 md:pb-6"
+              className="px-5 pb-5 pt-3 text-sm leading-relaxed text-(--texto) md:px-6 md:pb-6"
             >
               {children}
             </motion.div>

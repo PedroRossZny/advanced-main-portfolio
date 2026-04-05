@@ -29,16 +29,16 @@ export default function TechSection({ activeFilter, onFilterSelect }: TechSectio
   return (
     <article
       id="tecnologias"
-      className="mb-6 rounded-xl border border-[var(--borda)] bg-[var(--fundo-card)] p-6 transition-colors duration-400"
+      className="mb-6 rounded-xl border border-(--borda) bg-(--fundo-card) p-6 transition-colors duration-400"
     >
-      <header className="mb-8 flex flex-col gap-2 border-b-2 border-[var(--borda)] pb-3 md:flex-row md:items-center">
-        <div className="flex items-center gap-2 text-[var(--destaque)]">
+      <header className="mb-8 flex flex-col gap-2 border-b-2 border-(--borda) pb-3 md:flex-row md:items-center">
+        <div className="flex items-center gap-2 text-(--destaque)">
           <Laptop size={24} />
           <h2 className="text-xl font-poppins font-semibold uppercase tracking-wide">
             {t("titulo-tecnologias")}
           </h2>
         </div>
-        <span className="text-[0.75rem] italic text-[var(--texto-mutado)] md:ml-2">
+        <span className="text-[0.75rem] italic text-(--texto-mutado) md:ml-2">
           {t("dica-filtro")}
         </span>
       </header>
@@ -50,9 +50,9 @@ export default function TechSection({ activeFilter, onFilterSelect }: TechSectio
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: index * 0.1 }}
-            className="flex flex-col gap-4 rounded-xl border border-[var(--borda)] bg-[var(--fundo-principal)] p-4 transition-all duration-300 hover:-translate-y-1 hover:border-[var(--destaque)] hover:shadow-lg"
+            className="flex flex-col gap-4 rounded-xl border border-(--borda) bg-(--fundo-principal) p-4 transition-all duration-300 hover:-translate-y-1 hover:border-(--destaque) hover:shadow-lg"
           >
-            <h3 className="border-b-2 border-[var(--borda)] pb-2 text-[1.05em] font-poppins font-semibold text-[var(--destaque)]">
+            <h3 className="border-b-2 border-(--borda) pb-2 text-[1.05em] font-poppins font-semibold text-(--destaque)">
               {t(group.categoryKey)}
             </h3>
 
@@ -68,8 +68,8 @@ export default function TechSection({ activeFilter, onFilterSelect }: TechSectio
                     className={`flex cursor-pointer items-center gap-2 rounded-lg border px-3 py-1.5 text-sm font-semibold transition-all duration-300 active:scale-95 active:opacity-80
                       ${
                         activeFilter === tech.filter
-                          ? "border-[var(--destaque)] bg-[var(--destaque)] text-white shadow-[0_4px_10px_rgba(0,0,0,0.15)] -translate-y-[2px]"
-                          : "border-[var(--borda)] bg-[var(--fundo-card)] text-[var(--texto)] hover:-translate-y-1 hover:border-[var(--destaque)] hover:bg-[var(--fundo-card)] hover:text-[var(--destaque)]"
+                          ? "border-(--destaque) bg-(--destaque) text-white shadow-[0_4px_10px_rgba(0,0,0,0.15)] -translate-y-0.5"
+                          : "border-(--borda) bg-(--fundo-card) text-(--texto) hover:-translate-y-1 hover:border-(--destaque) hover:bg-(--fundo-card) hover:text-(--destaque)"
                       }`}
                   >
                     <TechnologyIcon technology={tech} />
