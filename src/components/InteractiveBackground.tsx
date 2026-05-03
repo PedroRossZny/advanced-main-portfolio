@@ -1,4 +1,4 @@
-"use client"; // Necessário porque vamos usar hooks do React para capturar o mouse
+"use client";
 
 import { useEffect, useRef } from "react";
 
